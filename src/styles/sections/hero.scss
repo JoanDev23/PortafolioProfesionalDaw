@@ -1,7 +1,7 @@
 @use "../variables" as *;
 
 .hero {
-
+    
     &__container {
         display: flex;
         flex-direction: column;
@@ -11,11 +11,24 @@
         gap: 1rem;
 
         &--text {
-            font-size: 2rem;
-            font-weight: 600;
-            font-family: $font-family-heading;
-            text-align: center;
-            width: 100%;
+            h1 {
+                font-size: 2.5rem;
+                font-weight: 900;
+                font-family: $font-family-heading;
+                text-align: center;
+                width: 100%;
+                color: $color-text-primary;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: 400;
+                font-family: $font-family-body;
+                text-align: center;
+                width: 100%;
+                margin-bottom: 1rem;
+                color: $color-accent;
+            }
         }
 
         &--img {
@@ -32,9 +45,8 @@
         align-items: center;
 
         button {
-            background-color: $color-primary;
             color: $color-text-white;
-            padding: .4rem;
+            padding: .3rem;
             border-radius: 5px;
             border: none;
             cursor: pointer;
@@ -42,15 +54,23 @@
         }
 
         button:nth-child(1) {
-            font-size: 1.5rem;
-            font-weight: 400;
+            font-size: 1.2rem;
+            font-weight: 350;
+            width: 10rem;
             font-family: $font-family-body;
+            background-color: $color-primary;
+            border-radius: 10px;
         }
 
         button:nth-child(2) {
-            font-size: 2rem;
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 350;
+            padding: .2rem;
+            width: 10rem;
             font-family: $font-family-body;
+            border: 2px solid $color-text-primary;
+            color: $color-text-primary;
+            border-radius: 10px;
         }
     }
 

@@ -10,7 +10,7 @@ $font-family-body: 'Roboto', sans-serif;
 // ========================================
 $molten-lava: #780000ff;
 $brick-red: #c1121fff;
-$papaya-whip: #fdf0d5ff;
+$papaya-whip: rgb(255, 248, 235);
 $deep-space-blue: #003049ff;
 $steel-blue: #669bbcff;
 $white: #ffffff;
@@ -32,6 +32,7 @@ $color-danger: $molten-lava;         // Para errores y alertas
 $color-bg-light: $papaya-whip;       // Fondo claro
 $color-bg-dark: $deep-space-blue;    // Fondo oscuro
 $color-bg-white: $white;             // Fondo blanco puro
+$color-bg-black: $black;             // Fondo negro puro
 
 // Textos
 $color-text-primary: $deep-space-blue;  // Texto principal (oscuro)

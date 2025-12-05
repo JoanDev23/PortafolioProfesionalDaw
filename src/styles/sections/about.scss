@@ -1,0 +1,27 @@
+@use "../variables" as *;
+
+.about {
+    background-color: $color-bg-light;
+    padding: 3rem 1rem;
+
+    &__container {
+        max-width: 100%;
+        margin: 0 auto;
+        &--text {
+            h2 {
+                font-size: 2rem;
+                text-align: center;
+                font-weight: 600;
+                color: $color-secondary;
+            }
+
+            p {
+                font-size: 1rem;
+                text-align: center;
+                color: $color-accent;
+                font-weight: 400;
+                line-height: 1.6;
+            }
+        }
+    }
+}
