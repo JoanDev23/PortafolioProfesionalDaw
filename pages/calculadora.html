@@ -5,20 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <link rel="stylesheet" href="../styles/calculadora.css">
+    <link rel="stylesheet" href="../src/styles/main.scss">
 </head>
 
 <body>
-    <h1>Calculadora</h1>
-    <form action="">
-        <label for="numero1">Numero 1</label>
-        <input type="number" id="numero1">
+    <section class="calculadora">
+        <h1>Calculadora</h1>
+        <form action="">
+            <label for="numero1">Numero 1</label>
+            <input type="number" id="numero1">
 
-        <label for="numero2">Numero 2</label>
-        <input type="number" id="numero2">
+            <label for="numero2">Numero 2</label>
+            <input type="number" id="numero2">
 
-        <button id="resultado">resultado</button>
-    </form>
+            <div class="container__buttons">
+                <button type="submit" id="sumar"><img src="../src/assets/icons/calculator/circle-plus.svg"
+                        alt=""></button>
+                <button type="submit" id="restar"><img src="../src/assets/icons/calculator/circle-minus.svg"
+                        alt=""></button>
+                <button type="submit" id="multiplicar"><img src="../src/assets/icons/calculator/circle-x.svg"
+                        alt=""></button>
+                <button type="submit" id="dividir"><img src="../src/assets/icons/calculator/circle-divide.svg"
+                        alt=""></button>
+                <button type="submit" id="porcentaje"><img src="../src/assets/icons/calculator/circle-percent.svg"
+                        alt=""></button>
+                <button type="submit" id="igual"><img src="../src/assets/icons/calculator/circle-equal.svg"
+                        alt=""></button>
+            </div>
+
+        </form>
+        <div>
+            <p>Resultado: <span id="resultado"></span></p>
+        </div>
+    </section>
+
 
     <script src="../src/scripts/calculadora.js"></script>
 </body>
