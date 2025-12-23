@@ -1,44 +1,38 @@
 
 function calculadora() {
     document.addEventListener('DOMContentLoaded', () => {
-        const num1 = document.getElementById('numero1');
-        const num2 = document.getElementById('numero2');
-        const sumar = document.getElementById('sumar');
-        const restar = document.getElementById('restar');
-        const multiplicar = document.getElementById('multiplicar');
-        const dividir = document.getElementById('dividir');
-        const porcentaje = document.getElementById('porcentaje');
-        const igual = document.getElementById('igual');
-        const resultado = document.getElementById('resultado');
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('button');
 
-        sumar.addEventListener('click', (e) => {
-            e.preventDefault();
-            const suma = parseInt(num1.value) + parseInt(num2.value);
-            resultado.textContent = suma;
-        })
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const btnValue = button.textContent;
+                const operadores = ['+', '-', '*', '/'];
+                const ultimoCaracter = display.textContent.slice(-1);
 
-        restar.addEventListener('click', (e) => {
-            e.preventDefault();
-            const resta = parseInt(num1.value) - parseInt(num2.value);
-            resultado.textContent = resta;
-        })
+                if (btnValue === 'C') {
+                    display.textContent = '';
+                    return;
+                }
 
-        multiplicar.addEventListener('click', (e) => {
-            e.preventDefault();
-            const multiplicacion = parseInt(num1.value) * parseInt(num2.value);
-            resultado.textContent = multiplicacion;
-        })
+                if (btnValue === '=') {
+                    try {
+                        const expresion = display.textContent.replace(/[^-+*/.0-9]/g, '');
+                        display.textContent = new Function('return ' + expresion)();
 
-        dividir.addEventListener('click', (e) => {
-            e.preventDefault();
-            const division = parseInt(num1.value) / parseInt(num2.value);
-            resultado.textContent = division;
-        })
+                    } catch (error) {
+                        display.textContent = 'Error';
+                    }
+                    return;
+                }
+                if (operadores.includes(btnValue) && operadores.includes(ultimoCaracter)) {
+                    display.textContent = display.textContent.slice(0, -1) + btnValue;
+                    return;
+                }
 
-        porcentaje.addEventListener('click', (e) => {
-            e.preventDefault();
-            const porcentaje = parseInt(num1.value) * parseInt(num2.value) / 100;
-            resultado.textContent = porcentaje;
+                display.textContent += btnValue;
+
+            });
         })
     })
 }
