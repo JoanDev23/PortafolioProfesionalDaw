@@ -1,0 +1,9 @@
+# Build settings
+[build]
+  command = "npm run build"
+  publish = "dist"
+# Redirects for SPA behavior
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
